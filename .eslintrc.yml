@@ -1,5 +1,6 @@
 env:
   es6: true
+  jest: true
   node: true
   browser: true
   commonjs: true
@@ -23,7 +24,9 @@ rules:
   react/prop-types: "off"
   max-lines:
     - error
-    - 80
+    - skipBlankLines: true
+      skipComments: true
+      max: 150
   linebreak-style:
     - error
     - unix
@@ -31,5 +34,6 @@ overrides:
   - files:
       - "*.js"
     rules:
+      "linebreak-style": "off"
       "@typescript-eslint/no-var-requires": "off"
 
